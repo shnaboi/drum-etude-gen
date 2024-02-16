@@ -12,7 +12,17 @@ pattern_length = 8
 num = 0
 
 for i in range(pattern_length):
-  choice = random.choice(STICKINGS)
+  # check if last two notes in pattern are the same
+  if len(new_pattern) <= 2:
+    choice = random.choice(STICKINGS)
+  else:
+    if new_pattern[-2] == new_pattern[-1]:
+      values_to_choose = new_pattern[:-2]
+      choice = random.choice(values_to_choose)
+      print(new_pattern, values_to_choose)
+    else:
+      choice = random.choice(STICKINGS)
+
   new_pattern.append(choice)
 
 print(new_pattern)
