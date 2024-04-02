@@ -18,3 +18,4 @@ class Pattern_Brain:
       self.pattern.append(choice)
 
     print(self.pattern)
+    return self.pattern
